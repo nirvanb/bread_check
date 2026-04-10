@@ -6,7 +6,9 @@ app = Flask(__name__)
 IMAGES = [
     "baguette.jpg",
     "sourdough.jpg",
-    "croissant.jpg"
+    "toast.jpg",
+    "semmel.jpg",
+    "brotchen.jpg"
 ]
 
 @app.route("/", methods=["GET", "POST"])
