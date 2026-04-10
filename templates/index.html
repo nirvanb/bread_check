@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bread Selection</title>
+    <style>
+        img {
+            width: 150px;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+        input:checked + img {
+            border: 3px solid green;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Select all breads you like:</h2>
+
+<form method="POST">
+    {% for image in images %}
+        <label>
+            <input type="checkbox" name="bread" value="{{ image }}" hidden>
+            <img src="{{ url_for('static', filename='images/' + image) }}">
+        </label>
+    {% endfor %}
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
