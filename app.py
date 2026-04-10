@@ -5,7 +5,7 @@ import csv, os, random
 app = Flask(__name__)
 
 # Database setup
-devskip = False
+devskip = True
 if not devskip:
     uri = os.environ.get("DATABASE_URL")
     if uri.startswith("postgres://"):
