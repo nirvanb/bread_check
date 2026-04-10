@@ -8,9 +8,8 @@ app = Flask(__name__)
 devskip = True
 if not devskip:
     uri = os.environ.get("DATABASE_URL")
-    if uri.startswith("postgres://"):
-        uri = uri.replace("postgres://", "postgresql://", 1)
-
+    #if uri.startswith("postgres://"):
+    #    uri = uri.replace("postgres://", "postgresql://", 1)
     app.config["SQLALCHEMY_DATABASE_URI"] = uri
 else:
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///responses.db"
